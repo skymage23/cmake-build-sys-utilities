@@ -3,9 +3,9 @@ project(cmake_test_get_subdirectories_with_cmake_lists)
 
 add_subdirectory(custom_targets)
 
-include(${CMAKE_CURRENT_LIST_DIR}/../../../cmake/common.cmake)
-include(${CMAKE_SCRIPTS_DIR}/debug.cmake)
-include(${CMAKE_SCRIPTS_DIR}/dir_opts.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/../../../scripts/common.cmake)
+include(${SCRIPTS_DIR}/debug.cmake)
+include(${SCRIPTS_DIR}/dir_opts.cmake)
 
 get_subdirectories_with_cmake_lists_txt(${CMAKE_CURRENT_LIST_DIR})
 

@@ -1,4 +1,4 @@
-include(${CMAKE_CURRENT_LIST_DIR}/../../cmake/common.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/../scripts/common.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/common.cmake)
 
 #set(BUILD_DIR_PATH "${CMAKE_CURRENT_LIST_DIR}/build")

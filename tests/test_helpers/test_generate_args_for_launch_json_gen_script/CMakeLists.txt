@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.30)
 project(test_generate_args_for_launch_json_gen_script)
-include(${CMAKE_CURRENT_LIST_DIR}/../../../../cmake/common.cmake)
-include(${CMAKE_SCRIPTS_DIR}/build_sys_opts.cmake)
-include(${CMAKE_SCRIPTS_DIR}/debug.cmake)
-include(${SCRIPTS_DIR}/scripts_tests/cmake/common.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/../../../scripts/common.cmake)
+include(${SCRIPTS_DIR}/build_sys_opts.cmake)
+include(${SCRIPTS_DIR}/debug.cmake)
+include(${SCRIPTS_DIR}/common.cmake)
 
 set(EXPECTED_TARGET "hello_world")
 set(LEN "")

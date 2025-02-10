@@ -1,7 +1,7 @@
 include_guard(GLOBAL)
 include(${CMAKE_CURRENT_LIST_DIR}/common.cmake)
-include(${CMAKE_SCRIPTS_DIR}/debug.cmake)
-include(${CMAKE_SCRIPTS_DIR}/dir_opts.cmake)
+#include(${SCRIPTS_DIR}/debug.cmake)
+include(${SCRIPTS_DIR}/dir_opts.cmake)
 
 
 

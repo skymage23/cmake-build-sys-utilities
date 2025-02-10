@@ -20,6 +20,7 @@ endfunction()
 #
 # Helper functions:
 ########################
+#Yeah. This needs to be fixed.
 function(print_debug MESSAGE LOCAL_PREFIX)
     if($ENV{DEBUG})
         set(PREFIX "")

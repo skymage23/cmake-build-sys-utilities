@@ -1,6 +1,6 @@
 include_guard(GLOBAL)
-include(${CMAKE_SCRIPTS_DIR}/debug.cmake)
-include(${CMAKE_SCRIPTS_DIR}/stack.cmake)
+include(${SCRIPTS_DIR}/debug.cmake)
+include(${SCRIPTS_DIR}/stack.cmake)
 
 function(get_subdirectories_with_cmake_lists_txt DIRECTORY)
     assert_is_directory("${DIRECTORY}")
