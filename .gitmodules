@@ -1,0 +1,3 @@
+[submodule "tests/third_party/cmake-script-test-framework"]
+	path = tests/third_party/cmake-script-test-framework
+	url = https://github.com/skymage23/cmake-script-test-framework
