@@ -5,8 +5,10 @@ include(${SCRIPTS_DIR}/dir_opts.cmake)
 
 
 
-set(TARGET_LIST "")#<path,name,type> <path,name,type>
+#CMake sucks at handling multiple returns:
+
 function(get_targets_list_under_dir DIRECTORY)
+    set(TARGET_LIST "" PARENT_SCOPE)
     set(DIR_LIST "")
     set(TARGET_LIST "")
     set(OUTPUT_TEMP "")
@@ -15,7 +17,7 @@ function(get_targets_list_under_dir DIRECTORY)
     get_subdirectories_with_cmake_lists_txt(${DIRECTORY})
     set(DIR_LIST "${GET_SUBDIRECTORIES_OUTPUT}")
 
-    foreach(VAR "${DIR_LIST}")
+    foreach(VAR ${DIR_LIST})
         get_property(OUTPUT_TEMP DIRECTORY ${VAR} PROPERTY BUILDSYSTEM_TARGETS)
         list(APPEND OUTPUT_TARGET_TEMP ${OUTPUT_TEMP})
     endforeach()
