@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.31)
 project(test_generate_args_for_launch_json_gen_script)
-include("${CMAKE_CURRENT_LIST_DIR}/../../../scripts/build_sys_opts.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/../../scripts/build_sys_opts.cmake")
 add_subdirectory("custom_targets")
 add_subdirectory("tests")
 
