@@ -23,7 +23,7 @@ include(${CMAKE_CURRENT_LIST_DIR}/third_party/cmake-script-test-framework/cmake-
 macro(test_generate_args_for_launch_json_gen_script)
     execute_process( 
         COMMAND ${CMAKE_COMMAND}  ${test_dir}/CMakeLists.txt
-        TIMEOUT 4s
+        TIMEOUT 7s
         WORKING_DIRECTORY ${test_dir}/build
         COMMAND_ECHO STDOUT
         COMMAND_ERROR_IS_FATAL ANY

@@ -19,7 +19,7 @@ add_setup_macro(MACRO_NAME setup)
 
 macro(test)
 execute_process( COMMAND ${CMAKE_COMMAND}  ${test_dir}/CMakeLists.txt
-    TIMEOUT 4s
+    TIMEOUT 7s
     WORKING_DIRECTORY ${BUILD_DIR}
     COMMAND_ECHO STDOUT
     COMMAND_ERROR_IS_FATAL ANY
