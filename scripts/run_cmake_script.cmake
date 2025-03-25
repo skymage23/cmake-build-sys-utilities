@@ -11,11 +11,6 @@ function(run_cmake_script)
     set(oneValueArgs "INPUT" "WORKING_DIRECTORY")
     cmake_parse_arguments(arg_run_cmake_script "" "${oneValueArgs}" "" ${ARGN})
 
-    foreach(i RANGE ${ARGC})
-        message(STATUS "Argument ${i}: ${ARGV${i}}")
-    endforeach()    
-
-
     if((NOT arg_run_cmake_script_INPUT) OR
        ("${arg_run_cmake_script_INPUT}" STREQUAL ""))
         message(FATAL_ERROR "run_cmake_script: INPUT argument does not exist or it is empty.")
