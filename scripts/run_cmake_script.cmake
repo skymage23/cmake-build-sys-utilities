@@ -1,4 +1,4 @@
-function(run_cmake_script INPUT)
+function(run_cmake_script)
 
     if(${ARGC} LESS 2)
         message(FATAL_ERROR "run_cmake_script: too few arguments.")
@@ -10,6 +10,11 @@ function(run_cmake_script INPUT)
 
     set(oneValueArgs "INPUT" "WORKING_DIRECTORY")
     cmake_parse_arguments(arg_run_cmake_script "" "${oneValueArgs}" "" ${ARGN})
+
+    foreach(i RANGE ${ARGC})
+        message(STATUS "Argument ${i}: ${ARGV${i}}")
+    endforeach()    
+
 
     if((NOT arg_run_cmake_script_INPUT) OR
        ("${arg_run_cmake_script_INPUT}" STREQUAL ""))
@@ -45,7 +50,7 @@ function(run_cmake_script INPUT)
 
 
     execute_process(
-        COMMAND "${CMAKE_COMMAND}" "-P" ${INPUT}
+        COMMAND "${CMAKE_COMMAND}" "-P" ${arg_run_cmake_script_INPUT}
         WORKING_DIRECTORY "${arg_run_cmake_script_WORKING_DIRECTORY}"
         COMMAND_ERROR_IS_FATAL ANY 
     )

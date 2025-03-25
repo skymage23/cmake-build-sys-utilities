@@ -3,7 +3,8 @@ include("${CMAKE_CURRENT_LIST_DIR}/../scripts/run_cmake_script.cmake")
 
 macro(test)
     run_cmake_script(
-        INPUT "${CMAKE_CURRENT_LIST_DIR}/test_helpers/scripts/test-script.cmake"
-        WORKING_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/test_helpers/scripts" 
+        INPUT "${CMAKE_SOURCE_DIR}/scripts/test-script.cmake"
+        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/scripts" 
     )
 endmacro()
+add_test_macro(MACRO_NAME test)
