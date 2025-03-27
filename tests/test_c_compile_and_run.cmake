@@ -7,7 +7,7 @@ endmacro()
 add_setup_macro(MACRO_NAME setup)
 
 macro(teardown)
-    unset(C_PROJ_BASE_DIR)
+    unset(C_PROG_BASE_DIR)
 endmacro()
 
 macro(test_run_c_program)
