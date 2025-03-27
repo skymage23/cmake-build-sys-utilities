@@ -55,7 +55,7 @@ function(c_compile_and_run C_PROGRAM PROG_ARGS)
    ")
    
    if(NOT DEFINED C_PROG_BASE_DIR)
-       set(C_PROG_BASE_DIR "${CMAKE_CURRENT_LIST_DIR}")
+       set(C_PROG_BASE_DIR "${CMAKE_SOURCE_DIR}")
    endif()
    set("temp_filepath" "${C_PROG_BASE_DIR}/${project_name}")
    if(EXISTS "${temp_filepath}")
