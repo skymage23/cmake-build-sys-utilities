@@ -42,7 +42,7 @@ function(c_compile_and_run C_PROGRAM PROG_ARGS)
 
    set(project_name "my_project")
    set(my_cmake_file "
-   cmake_minimum_required(VERSION 3.0)
+   cmake_minimum_required(VERSION 3.10)
 
    project(${project_name})
    add_executable(${project_name} ${project_name}.c)
@@ -53,8 +53,11 @@ function(c_compile_and_run C_PROGRAM PROG_ARGS)
         RUNTIME
     )
    ")
-
-   set("temp_filepath" "${CMAKE_CURRENT_LIST_DIR}/${project_name}")
+   
+   if(NOT DEFINED C_PROG_BASE_DIR)
+       set(C_PROG_BASE_DIR "${CMAKE_CURRENT_LIST_DIR}")
+   endif()
+   set("temp_filepath" "${C_PROJ_BASE_DIR}/${project_name}")
    if(EXISTS "${temp_filepath}")
        file(REMOVE_RECURSE "${temp_filepath}")
    endif()

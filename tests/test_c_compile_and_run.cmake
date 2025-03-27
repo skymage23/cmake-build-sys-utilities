@@ -1,6 +1,15 @@
 include("${CMAKE_CURRENT_LIST_DIR}/third_party/cmake-script-test-framework/cmake-test.cmake")
 include("${CMAKE_CURRENT_LIST_DIR}/../scripts/c_compile_and_run.cmake")
 
+macro(setup)
+    set(C_PROG_BASE_DIR "${CMAKE_SOURCE_DIR}")
+endmacro()
+add_setup_macro(MACRO_NAME setup)
+
+macro(teardown)
+    unset(C_PROJ_BASE_DIR)
+endmacro()
+
 macro(test_run_c_program)
     set(C_PROGRAM "
     #include <stdio.h>
@@ -13,7 +22,7 @@ macro(test_run_c_program)
 ")
 
 c_compile_and_run("${C_PROGRAM}" "")
-    if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/my_project")
+    if(EXISTS "${CMAKE_SOURCE_DIR}/my_project")
         message(FATAL_ERROR "Project directory was not correctly deleted.")
     endif()
    

@@ -1,6 +1,15 @@
 include("${CMAKE_CURRENT_LIST_DIR}/third_party/cmake-script-test-framework/cmake-test.cmake")
 include("${CMAKE_CURRENT_LIST_DIR}/../scripts/check_endianness.cmake")
 
+macro(setup)
+    set(C_PROG_BASE_DIR "${CMAKE_CURRENT_LIST_DIR}")
+endmacro()
+add_setup_macro(MACRO_NAME setup)
+
+macro(teardown)
+    unset(C_PROJ_BASE_DIR)
+endmacro()
+
 macro(test_check_endianness)
     # Call the check_endianness function
     check_endianness()
