@@ -76,7 +76,7 @@ function(is_current_encoding_8_bit)
         fprintf(stdout, fmt_str, encoding);
     
         //If we are ASCII, UTF-8, or Windows-1252
-        if (encoding == \"DEADBEEF\") {
+        if ((strncmp(encoding, \"DEADBEEF\", sizeof(char) * 9)) == 0) {
             return 1;
         }
         return 0;
