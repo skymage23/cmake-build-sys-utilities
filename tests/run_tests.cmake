@@ -11,4 +11,6 @@ run_test(TEST_SCRIPT_FILE "${CMAKE_CURRENT_LIST_DIR}/test_run_cmake_script.cmake
 run_test(TEST_SCRIPT_FILE "${CMAKE_CURRENT_LIST_DIR}/test_look_for_dependency_program.cmake")
 run_test(TEST_SCRIPT_FILE "${CMAKE_CURRENT_LIST_DIR}/test_logging.cmake")
 run_test(TEST_SCRIPT_FILE "${CMAKE_CURRENT_LIST_DIR}/test_logging_env_variable.cmake")
+run_test(TEST_SCRIPT_FILE "${CMAKE_CURRENT_LIST_DIR}/test_c_compile_and_run.cmake")
+run_test(TEST_SCRIPT_FILE "${CMAKE_CURRENT_LIST_DIR}/test_check_endianness.cmake")
 
