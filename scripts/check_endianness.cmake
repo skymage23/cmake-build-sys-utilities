@@ -1,7 +1,7 @@
 include_guard(GLOBAL)
 include("${CMAKE_CURRENT_LIST_DIR}/c_compile_and_run.cmake")
 
-function(check_endianness)
+function(check_endianness ECHO_OUTPUT)
     set(endianness_check_program "
     #include <stdio.h>
     #include <stdlib.h>
@@ -31,7 +31,7 @@ function(check_endianness)
     }
     ")
     
-    c_compile_and_run("${endianness_check_program}" "")
+    c_compile_and_run("check_endianness" ${ECHO_OUTPUT} "${endianness_check_program}" "")
     
     if(PROG_RETVAL EQUAL 0)
         if(PROG_STDOUT MATCHES "LITTLE_ENDIAN")
