@@ -19,7 +19,7 @@ function(run_cmake_script)
     file(REAL_PATH "${arg_run_cmake_script_INPUT}" arg_run_cmake_script_INPUT EXPAND_TILDE)
 
     if(NOT EXISTS "${arg_run_cmake_script_INPUT}")
-        message(FATAL_ERROR "run_cmake_script: INPUT does not exist on the filesystem.")
+        message(FATAL_ERROR "run_cmake_script: INPUT (${arg_run_cmake_script_INPUT}) does not exist on the filesystem.")
     endif()
 
     if(IS_DIRECTORY "${arg_run_cmake_script_INPUT}")
