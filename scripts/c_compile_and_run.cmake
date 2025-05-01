@@ -35,12 +35,17 @@ function(try_find_build_system PROG_NAME)
 endfunction()
 
 
-function(c_compile_and_run C_PROGRAM PROG_ARGS)
+function(c_compile_and_run PROG_NAME ECHO_OUTPUT C_PROGRAM PROG_ARGS)
    unset(PROG_STDOUT PARENT_SCOPE)
    unset(PROG_STDERR PARENT_SCOPE)
    unset(PROG_RETVAL PARENT_SCOPE)
 
-   set(project_name "my_project")
+   if (NOT "${PROG_NAME}" STREQUAL "")
+       set(project_name "${PROG_NAME}") 
+   else()
+       set(project_name "my_project")
+   endif()
+
    set(my_cmake_file "
    cmake_minimum_required(VERSION 3.10)
 
@@ -101,6 +106,12 @@ function(c_compile_and_run C_PROGRAM PROG_ARGS)
        ERROR_VARIABLE PROG_STDERR
        RESULT_VARIABLE PROG_RETVAL
    )
+ 
+   if(ECHO_OUTPUT)
+       message(STATUS "${PROG_NAME}: Return value: ${PROG_RETVAL}")
+       message(STATUS "${PROG_NAME}: STDOUT: ${PROG_STDOUT}")
+       message(STATUS "${PROG_NAME}: STDERR: ${PROG_STDERR}") 
+   endif()
 
    set(PROG_STDOUT ${PROG_STDOUT} PARENT_SCOPE)
    set(PROG_STDERR ${PROG_STDERR} PARENT_SCOPE)
