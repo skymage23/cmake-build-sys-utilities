@@ -1,5 +1,7 @@
+#!/usr/bin/env -S cmake  -P 
 cmake_minimum_required(VERSION 3.30)
-include("${CMAKE_CURRENT_LIST_DIR}/third_party/cmake-script-test-framework/cmake-test-runner.cmake")
+include(${CMAKE_CURRENT_LIST_DIR}/common.cmake)
+include(${CMAKE_TESTS_FRAMEWORK_DIR}/cmake-test-runner.cmake)
 #
 # Here, we are mainly concerned with testing the CMake scripts.
 # For testing purposes, we make up some nonsense targets
@@ -14,4 +16,5 @@ run_test(TEST_SCRIPT_FILE "${CMAKE_CURRENT_LIST_DIR}/test_logging_env_variable.c
 run_test(TEST_SCRIPT_FILE "${CMAKE_CURRENT_LIST_DIR}/test_c_compile_and_run.cmake")
 run_test(TEST_SCRIPT_FILE "${CMAKE_CURRENT_LIST_DIR}/test_check_endianness.cmake")
 run_test(TEST_SCRIPT_FILE "${CMAKE_CURRENT_LIST_DIR}/test_is_current_encoding_8_bit.cmake")
+#run_test(TEST_SCRIPT_FILE "${CMAKE_CURRENT_LIST_DIR}/test_siphash.cmake")
 
